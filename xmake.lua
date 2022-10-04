@@ -1,5 +1,5 @@
 set_project("ModernRobotics")
-set_version("0.0.1")
+set_version("0.1.0")
 
 add_requires("eigen 3.4.0", {system = false, configs = {shared = false, debug = true, cxflags = "-fPIC"}})
 

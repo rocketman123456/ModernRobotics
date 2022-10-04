@@ -387,8 +387,10 @@ namespace MR
         Eigen::JacobiSVD<Eigen::MatrixXd> svd(M, Eigen::ComputeFullU | Eigen::ComputeFullV);
         Eigen::MatrixXd                   R = svd.matrixU() * svd.matrixV().transpose();
         if (R.determinant() < 0)
+        {
             // In this case the result may be far from M; reverse sign of 3rd column
             R.col(2) *= -1;
+        }
         return R;
     }
 
